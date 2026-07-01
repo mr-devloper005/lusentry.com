@@ -73,13 +73,13 @@ export function EditableArticleComments({ slug, comments = [] }: { slug: string;
         <span className="text-[var(--tk-muted)]">({all.length})</span>
       </div>
 
-      <form onSubmit={submit} className="mt-6 rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-[var(--tk-surface)] p-5">
+      <form onSubmit={submit} className="mt-6 rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-white p-5 shadow-[0_18px_40px_rgba(49,54,35,0.08)]">
         <input
           value={name}
           onChange={(event) => setName(event.target.value)}
           placeholder="Your name (optional)"
           maxLength={60}
-          className="h-11 w-full rounded-lg border border-[var(--tk-line)] bg-[var(--tk-bg)] px-4 text-sm text-[var(--tk-text)] outline-none transition focus:border-[var(--tk-accent)]"
+          className="h-11 w-full rounded-2xl border border-[var(--tk-line)] bg-[var(--tk-bg)] px-4 text-sm text-[var(--tk-text)] outline-none transition focus:border-[var(--slot4-accent-fill)]"
         />
         <textarea
           value={text}
@@ -87,13 +87,13 @@ export function EditableArticleComments({ slug, comments = [] }: { slug: string;
           placeholder="Share your thoughts…"
           rows={3}
           maxLength={1500}
-          className="mt-3 w-full resize-y rounded-lg border border-[var(--tk-line)] bg-[var(--tk-bg)] px-4 py-3 text-sm leading-6 text-[var(--tk-text)] outline-none transition focus:border-[var(--tk-accent)]"
+          className="mt-3 w-full resize-y rounded-2xl border border-[var(--tk-line)] bg-[var(--tk-bg)] px-4 py-3 text-sm leading-6 text-[var(--tk-text)] outline-none transition focus:border-[var(--slot4-accent-fill)]"
         />
         <div className="mt-3 flex justify-end">
           <button
             type="submit"
             disabled={!text.trim()}
-            className="inline-flex items-center gap-2 rounded-lg bg-[var(--tk-accent)] px-6 py-2.5 text-sm font-bold text-[var(--tk-on-accent)] transition hover:brightness-95 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-full bg-[var(--slot4-accent-fill)] px-6 py-2.5 text-sm font-bold text-[#23261d] transition hover:-translate-y-0.5 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Send className="h-4 w-4" /> Post comment
           </button>
@@ -102,7 +102,7 @@ export function EditableArticleComments({ slug, comments = [] }: { slug: string;
 
       <div className="mt-6 grid gap-3">
         {all.map((comment) => (
-          <div key={comment.id} className="rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-[var(--tk-surface)] p-5">
+          <div key={comment.id} className="rounded-[var(--tk-radius)] border border-[var(--tk-line)] bg-white p-5 shadow-[0_14px_32px_rgba(49,54,35,0.07)]">
             <div className="flex items-center gap-3">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tk-accent-soft)] text-sm font-bold text-[var(--tk-accent)]">
                 {initial(comment.name)}
